@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+        <title>{% block title%}{% endblock %}</title>
+
+
+        <link rel="stylesheet" href="{{url_for('static',filename='./layui/css/layui.css')}}">
+
+        <script src="{{url_for('static',filename='./layui/layui.all.js')}}"></script>
+
+        <!-- <script language="JavaScript" type="text/javascript" src="{{url_for('static',filename='jquery-3.3.1.js')}}"></script>
+
+        <link rel="stylesheet" href="{{url_for('static',filename='main.css')}}">
+
+        <script language="JavaScript" type="text/javascript" 
+        src="{{url_for('static',filename='main.js')}}"></script> -->
+        {% block head%}{% endblock %}
+
+    </head>
+    {% block before_body%}{% endblock %}
+    <body background="{{url_for('static',filename='bg.jpg')}}">
+        
+
+        {% block body%}{% endblock %}
+
+       
+
+        <script>
+            var form = layui.form;
+            form.render();
+
+            var element = layui.element;
+            element.init();
+
+            var layer = layui.layer;
+        </script>
+    </body>
+    {% block after_body%}{% endblock %}
+
+</html>
+
